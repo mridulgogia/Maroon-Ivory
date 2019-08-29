@@ -1,4 +1,6 @@
 import React from 'react';
+import EditorComponent from './editor/editor';
+import SideBarComponent from './sidebar/sidebar';
 import './App.css';
 
 const firebase = require('firebase');
@@ -33,8 +35,12 @@ export default class App extends React.Component{
 
   render(){
     return (
-      <div>
-        hello world
+      <div className="app-container">
+        <SideBarComponent 
+        notes={this.state.notes}
+        selelectedNoteIndex = {this.state.selelectedNoteIndex}
+        />
+        <EditorComponent />
       </div>
     )
   }

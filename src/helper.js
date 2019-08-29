@@ -11,5 +11,5 @@ export default function debounce(a, b, c){
 }
 
 export function removeHTMLTags(str){
-    return str.replace( /<[^>]*>?gm , '' );
+    return str.replace(/<[^>]*>?/gm, '');
 };
