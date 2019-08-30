@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const AppKey = require('./API-Keys');
+const AppKey = require('./APIKeys');
 
 const firebase = require('firebase');
 require('firebase/firestore');
