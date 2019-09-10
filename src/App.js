@@ -2,6 +2,7 @@ import React from 'react';
 import EditorComponent from './editor/editor';
 import SideBarComponent from './sidebar/sidebar';
 import './App.css';
+import NoNote from './noNote/NoNote';
 
 const firebase = require('firebase');
 
@@ -114,7 +115,7 @@ export default class App extends React.Component{
             notes = {this.state.notes}
             noteUpdate = { this.noteUpdate}
           /> 
-          : null
+          : <NoNote />
         }
       </div>
     )
