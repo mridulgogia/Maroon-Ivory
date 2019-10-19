@@ -45,8 +45,7 @@ class sidebarComponent extends Component{
     }    
 
     render(){
-        const { notes, classes, selectedNoteIndex} = this.props;
-        
+        const { notes, classes, selectedNoteIndex} = this.props;        
         if(notes){
             return (
                 <div className={classes.sidebarContainer}>

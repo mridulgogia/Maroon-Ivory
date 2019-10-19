@@ -11,7 +11,7 @@ export default class App extends React.Component{
     super();
 
     this.state = {
-      selelectedNoteIndex : null,
+      selectedNoteIndex : null,
       selectedNote: null,
       notes: null 
     };
@@ -22,9 +22,9 @@ export default class App extends React.Component{
     this.noteUpdate = this.noteUpdate.bind(this);
   }
 
-  selectNote(note, index) {
-    this.setState({ 
-      selelectedNoteIndex: index,
+  async selectNote(note, index) {
+    await this.setState({ 
+      selectedNoteIndex: index,
       selectedNote: note
    });
   }
@@ -101,17 +101,18 @@ export default class App extends React.Component{
       <div className="app-container">
         <SideBarComponent 
             notes={this.state.notes}
-            selelectedNoteIndex = {this.state.selelectedNoteIndex}
+            selectedNoteIndex={this.state.selectedNoteIndex}
             selectNote = {this.selectNote}
             deleteNote = {this.deleteNote}
             newNote = {this.newNote}
+            
         />
 
         {
           this.state.selectedNote ? 
             <EditorComponent
             selectedNote = { this.state.selectedNote}
-            selelectedNoteIndex = { this.state.selelectedNoteIndex}
+            selectedNoteIndex = { this.state.selectedNoteIndex}
             notes = {this.state.notes}
             noteUpdate = { this.noteUpdate}
           /> 
